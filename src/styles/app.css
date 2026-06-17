@@ -1,0 +1,375 @@
+:root {
+  color: #edf6ff;
+  background: #0f1419;
+  font-family:
+    Inter, "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  color: #f6fbff;
+  background: #243442;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background: #2c4252;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #64c8ff;
+  outline-offset: 2px;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 12px 16px 16px;
+  background:
+    linear-gradient(90deg, rgba(57, 92, 113, 0.25) 0, transparent 34%),
+    linear-gradient(180deg, #121a21 0, #0d1217 100%);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  min-height: 76px;
+  padding: 6px 2px 12px;
+}
+
+.school-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.school-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.school-title-block p {
+  margin: 0;
+  color: #dce7ef;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.school-title-block h1 {
+  margin: 4px 0 0;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.physics-symbol,
+.physics-control {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.force-symbol {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.force-symbol sub {
+  margin-left: 1px;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 0.58em;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  transform: translateY(0.28em);
+}
+
+.inline-force sub {
+  font-weight: 700;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr);
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+.visual-area {
+  display: grid;
+  grid-template-rows: minmax(440px, 1fr) auto;
+  min-width: 0;
+  min-height: 0;
+  gap: 12px;
+}
+
+.scene-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: #101821;
+}
+
+.scene-host {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  touch-action: none;
+}
+
+.scene-host canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.scene-readouts {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: calc(100% - 28px);
+}
+
+.scene-readouts > span,
+.floating-note {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(14, 22, 30, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.scene-readouts > span {
+  padding: 7px 10px;
+  color: #f5fbff;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.floating-note {
+  position: absolute;
+  right: 14px;
+  max-width: min(360px, calc(100% - 28px));
+  padding: 12px 14px;
+  color: #f7fbff;
+  line-height: 1.45;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.bf-note {
+  bottom: 16px;
+  display: grid;
+  gap: 4px;
+}
+
+.rule-note {
+  bottom: 88px;
+}
+
+.control-bar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.control-bar button {
+  padding: 10px 12px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.control-bar .is-active {
+  border-color: #6bd0ff;
+  color: #07131a;
+  background: #8edcff;
+}
+
+.input-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: #17232c;
+}
+
+.panel-section {
+  display: grid;
+  gap: 8px;
+}
+
+.panel-section label {
+  color: #eef8ff;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.panel-section p {
+  margin: 0;
+  color: #a9c1d2;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.input-panel select,
+.input-panel input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  color: #f8fbff;
+  background: #0f171e;
+}
+
+.input-panel select {
+  padding: 0 12px;
+}
+
+.angle-input {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.angle-input span {
+  color: #dcecf8;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.angle-input input {
+  padding: 0 12px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.draw-button {
+  margin-top: auto;
+  min-height: 58px;
+  border-color: #f2d16b;
+  color: #17130a;
+  background: #f1c84c;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.draw-button:hover {
+  background: #ffdb62;
+}
+
+@media (max-width: 980px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-area {
+    grid-template-rows: minmax(390px, 58vh) auto;
+  }
+
+  .input-panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .app-header {
+    align-items: flex-start;
+  }
+
+  .school-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .school-title-block p {
+    font-size: 14px;
+  }
+
+  .school-title-block h1 {
+    font-size: 24px;
+  }
+
+  .visual-area {
+    grid-template-rows: minmax(340px, 56vh) auto;
+  }
+
+  .scene-card,
+  .scene-host {
+    min-height: 340px;
+  }
+
+  .control-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .control-bar button {
+    min-height: 50px;
+    font-size: 14px;
+  }
+
+  .scene-readouts {
+    left: 10px;
+    top: 10px;
+  }
+
+  .scene-readouts > span {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .floating-note {
+    left: 10px;
+    right: 10px;
+    max-width: none;
+    font-size: 13px;
+  }
+
+  .rule-note {
+    bottom: 92px;
+  }
+}
