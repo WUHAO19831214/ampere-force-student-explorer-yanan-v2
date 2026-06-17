@@ -223,10 +223,10 @@ function createDynamicModel(input: DirectionInput, vectors: ReturnType<typeof di
 
   if (showAngles) {
     group.add(
-      createAngleArc(input.alphaDeg, 0.82, COLORS.alpha, `∠α = ${formatAngle(input.alphaDeg)}`, new THREE.Vector3(0, 0.42, 0.18)),
+      createAngleArc(input.alphaDeg, 0.82, COLORS.alpha, `∠α = ${formatAngle(input.alphaDeg)}`, new THREE.Vector3(0, 0.42, -0.18)),
     );
     group.add(
-      createAngleArc(input.betaDeg, 1.12, COLORS.beta, `∠β = ${formatAngle(input.betaDeg)}`, new THREE.Vector3(0, 0.08, -0.48)),
+      createAngleArc(input.betaDeg, 1.12, COLORS.beta, `∠β = ${formatAngle(input.betaDeg)}`, new THREE.Vector3(0, 0.08, 0.48)),
     );
   }
 
@@ -259,8 +259,8 @@ function createAxes() {
   const group = new THREE.Group();
   group.add(createAxis(new THREE.Vector3(1, 0, 0), '+x', 3.15));
   group.add(createAxis(new THREE.Vector3(-1, 0, 0), '-x', 3.15));
-  group.add(createAxis(new THREE.Vector3(0, 0, 1), '+y', 3.15));
-  group.add(createAxis(new THREE.Vector3(0, 0, -1), '-y', 3.15));
+  group.add(createAxis(new THREE.Vector3(0, 0, -1), '+y', 3.15));
+  group.add(createAxis(new THREE.Vector3(0, 0, 1), '-y', 3.15));
   group.add(createAxis(new THREE.Vector3(0, 1, 0), '+z', 3.15));
   group.add(createAxis(new THREE.Vector3(0, -1, 0), '-z', 3.15));
   return group;
@@ -280,8 +280,8 @@ function getAxisLabelOffset(label: string) {
   const offset = LABEL_WORLD_OFFSET;
   if (label === '+x') return new THREE.Vector3(0, offset * 1.15, offset * 1.35);
   if (label === '-x') return new THREE.Vector3(0, -offset * 1.15, -offset * 1.35);
-  if (label === '+y') return new THREE.Vector3(0, offset * 0.55, offset * 0.45);
-  if (label === '-y') return new THREE.Vector3(0, offset * 0.55, -offset * 0.45);
+  if (label === '+y') return new THREE.Vector3(0, offset * 0.55, -offset * 0.45);
+  if (label === '-y') return new THREE.Vector3(0, offset * 0.55, offset * 0.45);
   if (label === '+z') return new THREE.Vector3(offset * 0.65, offset * 0.35, 0);
   if (label === '-z') return new THREE.Vector3(offset * 0.65, -offset * 0.35, 0);
   return new THREE.Vector3(0, 0, 0);
@@ -353,13 +353,13 @@ function createAngleArc(deg: number, radius: number, color: string, label: strin
   const end = THREE.MathUtils.degToRad(deg === 360 ? 359.8 : deg);
   for (let index = 0; index <= steps; index += 1) {
     const t = (end * index) / steps;
-    points.push(new THREE.Vector3(0, Math.sin(t) * radius, Math.cos(t) * radius));
+    points.push(new THREE.Vector3(0, Math.sin(t) * radius, -Math.cos(t) * radius));
   }
   const material = new THREE.LineBasicMaterial({ color, linewidth: 2 });
   group.add(createLine(points, material));
 
   const mid = end / 2;
-  const labelPosition = new THREE.Vector3(0, Math.sin(mid) * (radius + 0.72), Math.cos(mid) * (radius + 0.72)).add(labelOffset);
+  const labelPosition = new THREE.Vector3(0, Math.sin(mid) * (radius + 0.72), -Math.cos(mid) * (radius + 0.72)).add(labelOffset);
   group.add(createTextSprite(label, color, labelPosition, 0.26));
   return group;
 }

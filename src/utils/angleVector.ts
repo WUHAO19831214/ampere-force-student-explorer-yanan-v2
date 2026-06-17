@@ -31,7 +31,7 @@ export function currentDirectionVector(current: CurrentDirection) {
 }
 
 export function physicsToScene(vector: THREE.Vector3) {
-  return new THREE.Vector3(vector.x, vector.z, vector.y);
+  return new THREE.Vector3(vector.x, vector.z, -vector.y);
 }
 
 export function angleBetweenDeg(a: THREE.Vector3, b: THREE.Vector3) {
