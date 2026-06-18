@@ -37,7 +37,7 @@ export function DataInputPanel({ value, onChange, onDraw }: DataInputPanelProps)
           <span>°</span>
         </div>
         <p>
-          从 <span className="physics-symbol">+y</span> 正方向顺时针第一次转到 <span className="physics-symbol">B</span>{' '}
+          从 <span className="physics-symbol">+y</span> 正方向逆时针第一次转到 <span className="physics-symbol">B</span>{' '}
           正方向的夹角。
         </p>
       </div>
@@ -56,7 +56,7 @@ export function DataInputPanel({ value, onChange, onDraw }: DataInputPanelProps)
           <span>°</span>
         </div>
         <p>
-          从 <span className="physics-symbol">+y</span> 正方向顺时针第一次转到{' '}
+          从 <span className="physics-symbol">+y</span> 正方向逆时针第一次转到{' '}
           <span className="force-symbol inline-force">
             <span className="physics-symbol">F</span>
             <sub>安培力</sub>

@@ -39,8 +39,8 @@ const COLORS = {
   text: '#f8fbff',
 };
 
-const ZY_CAMERA = new THREE.Vector3(-7, 0, 0);
-const ORBIT_CAMERA = new THREE.Vector3(-5.4, 3.2, 4.6);
+const ZY_CAMERA = new THREE.Vector3(7, 0, 0);
+const ORBIT_CAMERA = new THREE.Vector3(5.4, 3.2, -4.6);
 const CAMERA_TARGET = new THREE.Vector3(0, 0, 0);
 const STUDENT_SCENE_LABEL_SCALE = 4;
 const LABEL_OFFSET_FACTOR = 2;
