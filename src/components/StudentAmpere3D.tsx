@@ -223,10 +223,10 @@ function createDynamicModel(input: DirectionInput, vectors: ReturnType<typeof di
 
   if (showAngles) {
     group.add(
-      createAngleArc(input.alphaDeg, 0.82, COLORS.alpha, `∠α = ${formatAngle(input.alphaDeg)}`, new THREE.Vector3(0, 0.42, -0.18)),
+      createAngleArc(input.alphaDeg, 0.82, COLORS.alpha, `α = ${formatAngle(input.alphaDeg)}`, new THREE.Vector3(0, 0.42, -0.18)),
     );
     group.add(
-      createAngleArc(input.betaDeg, 1.12, COLORS.beta, `∠β = ${formatAngle(input.betaDeg)}`, new THREE.Vector3(0, 0.08, 0.48)),
+      createAngleArc(input.betaDeg, 1.12, COLORS.beta, `β = ${formatAngle(input.betaDeg)}`, new THREE.Vector3(0, 0.08, 0.48)),
     );
   }
 

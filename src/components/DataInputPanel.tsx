@@ -32,7 +32,7 @@ export function DataInputPanel({ value, onChange, onDraw }: DataInputPanelProps)
           <span className="physics-symbol">B</span> 磁场方向角 <span className="physics-symbol">α</span>
         </label>
         <div className="angle-input">
-          <span className="physics-symbol">∠α =</span>
+          <span className="physics-symbol">α =</span>
           <input id="alpha" type="number" min="0" max="360" step="1" value={value.alphaDeg} onChange={updateAngle('alphaDeg')} />
           <span>°</span>
         </div>
@@ -51,7 +51,7 @@ export function DataInputPanel({ value, onChange, onDraw }: DataInputPanelProps)
           方向角 <span className="physics-symbol">β</span>
         </label>
         <div className="angle-input">
-          <span className="physics-symbol">∠β =</span>
+          <span className="physics-symbol">β =</span>
           <input id="beta" type="number" min="0" max="360" step="1" value={value.betaDeg} onChange={updateAngle('betaDeg')} />
           <span>°</span>
         </div>
