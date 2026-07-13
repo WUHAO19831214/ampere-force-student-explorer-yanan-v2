@@ -69,6 +69,13 @@ const fDir = new Vector3(0, Math.cos(betaRad), Math.sin(betaRad));
 
 三维区域支持鼠标和触摸旋转、缩放。默认进入 Z-Y 正视图，便于理解角度定义。
 
+## 研究型文档
+
+- [教学设计](docs/TEACHING_DESIGN.md)
+- [物理约定与计算边界](docs/PHYSICS_CONVENTIONS.md)
+- [课堂验证方案](docs/CLASSROOM_VALIDATION.md)
+- [与教师端应用的关系](docs/RELATION_TO_TEACHER_APP.md)
+
 ## Netlify 部署
 
 Netlify 配置建议：
