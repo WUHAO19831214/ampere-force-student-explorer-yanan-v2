@@ -8,6 +8,27 @@
 - 只保留安培力方向关系的三维探究功能。
 - 不包含教师端的 DIS、OCR、摄像头、屏幕捕获、CSV 导出和关键图像记录功能。
 
+## 单 HTML 离线版下载
+
+[直接下载单 HTML 文件](https://github.com/WUHAO19831214/ampere-force-student-explorer-yanan-v2/releases/latest/download/ampere-force-student-explorer-yanan-v2.html)
+
+下载后，用支持 WebGL 的 Chrome 或 Edge 打开即可使用。只需这一个文件，
+无需网络、Node.js 或本地服务器；React、Three.js、样式和校徽均已内嵌。
+
+离线版保留当前源码中的电流方向、α/β 输入、点击绘图、Z-Y 正视图、
+可旋转视角及 αβ 显示切换。此文件独立存放于 `offline/`，不改动原应用源码。
+以实际界面为准，下方旧说明提及的夹角验证、左手定则提示和全屏按钮尚未提供。
+
+如需从当前源码重新生成：
+
+```bash
+npm ci
+npm run build
+python3 scripts/build_single_html.py
+```
+
+生成文件：`offline/ampere-force-student-explorer-yanan-v2.html`。
+
 ## 本地运行
 
 ```bash
